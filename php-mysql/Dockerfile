@@ -11,5 +11,7 @@ RUN apt-get update && apt-get install -y php7.0-cli   \
                        php7.0-gd    \ 
                        php7.0-xmlrpc
 
-CMD ["php", "/app/scripts/warehouse/task_manager.php", "--url", "mirtrik.local"]
+ENV HOST_URL mirtrik.local
+
+CMD php /app/scripts/warehouse/task_manager.php --url $HOST_URL
 
